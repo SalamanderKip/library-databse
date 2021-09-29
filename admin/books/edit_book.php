@@ -27,12 +27,12 @@ if (isset($_POST['submit']) && $_POST['submit'] != '') {
     //     $active = 0; 
     // }
 
-    $query1 = $con->prepare("UPDATE books SET title = ?, author = ?, isbn13 = ?, format = ?, publisher = ?, pages = ?, dimensions = ?, overwiew = ? WHERE id = ? LIMIT 1;");
+    $query1 = $con->prepare("UPDATE books SET title = ?, author = ?, isbn13 = ?, format = ?, publisher = ?, pages = ?, dimensions = ?, overview = ? WHERE id = ? LIMIT 1;");
     if ($query1 === false) {
         echo mysqli_error($con);
     }
 
-    $query1->bind_param('ssississ', $title, $author, $isbn13, $format, $publisher, $pages, $dimensions, $overview, $id);
+    $query1->bind_param('ssississi', $title, $author, $isbn13, $format, $publisher, $pages, $dimensions, $overview, $id);
     if ($query1->execute() === false) {
         echo mysqli_error($con);
     } else {
@@ -61,16 +61,22 @@ if (isset($_POST['submit']) && $_POST['submit'] != '') {
                 $liqry->fetch();
 
                 if ($liqry->num_rows == '1') {
-                    $columns = array('id', 'title', 'author', 'isbn13', 'format', 'publisher', 'pages', 'dimensions', 'overview');
+                    $columns = array('id', 'title', 'author', 'isbn13', 'publisher', 'pages', 'dimensions', 'overview');
                     foreach ($columns as $key) {
                         $dit_veld_moet_alleen_lezen_zijn = "";
                         if ($key == 'id') {
                             $dit_veld_moet_alleen_lezen_zijn = "disabled";
                         }
                         echo '<b>' . $key . '</b> :<input type="text" name="' . $key . '" value="' . $$key . '" ' . $dit_veld_moet_alleen_lezen_zijn . '><br>';
-                        
+                    
                     }
                 }
+                echo '<b>format</b> :<select name="format" value="'. $format .'" required>';
+                        $arr = array('paperback', 'library binding', 'hardcover');
+                        foreach ($arr as $value) {
+                         ?> <option value="<?php echo $value; ?>"><?php echo $value; ?></option><?php
+                        }
+                        echo '</select> <br>';
             }
         }
         $liqry->close();
