@@ -8,12 +8,12 @@
         $password_1 = $con->real_escape_string($_POST['password_1']);
         $password_2 = $con->real_escape_string($_POST['password_2']);
         
-        $liqry = $con->prepare("SELECT admin_user_id,email FROM admin_user WHERE password_token = ? LIMIT 1;");
+        $liqry = $con->prepare("SELECT id,email FROM user WHERE password = ? LIMIT 1;");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{
             $liqry->bind_param('s',$token);
-            $liqry->bind_result($adminId,$email);
+            $liqry->bind_result($id,$email);
             if($liqry->execute()){
                 $liqry->store_result();
                 $liqry->fetch();
@@ -21,12 +21,12 @@
 
                     $password = password_hash($password_1, PASSWORD_DEFAULT);
                     
-                    $query1 = $con->prepare("UPDATE admin_user SET password = ?, password_token = '', password_changed = NOW() WHERE admin_user_id = ? LIMIT 1;");
+                    $query1 = $con->prepare("UPDATE user SET password = ?, password_token = '', password_changed = NOW() WHERE id = ? LIMIT 1;");
                     if ($query1 === false) {
                         echo mysqli_error($con);
                     }
                     
-                    $query1->bind_param('si',$password,$adminId);
+                    $query1->bind_param('si',$password,$id);
                     if ($query1->execute() === false) {
                         echo mysqli_error($con);
                     } 

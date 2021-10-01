@@ -6,7 +6,6 @@ if (!isset($_SESSION['Sadmin_id']) || $_SESSION['Sadmin_id'] == "" || $_SESSION[
 	$loginError = true;
 }
 
-if ($loginError)
-{
+if ($loginError) {
 	exit('Sessie verlopen<meta http-equiv="refresh" content="2; URL='.BASEURL_CMS.'index.php">');
 }

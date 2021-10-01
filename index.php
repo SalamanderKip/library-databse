@@ -1,7 +1,3 @@
-<?php
-// include 'core/db_connect.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +13,8 @@
 <body>
     <?php
     include 'core/header.php';
+    include 'core/checklogin_member.php';
+    echo $_SESSION["Sid"];
     ?>
     <div class="container">
         <div class="card-group">

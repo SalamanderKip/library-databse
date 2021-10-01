@@ -16,7 +16,7 @@ if ($con -> connect_errno) {
     exit();
 }
 
-define("BASEURL","http://localhost:8001/webdev-base-webshop/");
+define("BASEURL","http://localhost:8001/leerjaar2/periode1/Database/webdev-base-webshop/");
 define("BASEURL_CMS","http://localhost:8001/webdev-base-webshop/admin/");
 
 function prettyDump ( $var ) {
