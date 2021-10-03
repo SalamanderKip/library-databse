@@ -34,7 +34,7 @@
                             ?>
                             
                             <?php
-                            $locationonclick = "' onclick='location.href=\"login.php?id=" . $id . "\"'";
+                            $locationonclick = "' onclick='location.href=\"lent.php?id=" . $id . "\"'";
                             ?>
                             <div class='col-md-3 '>
                                 <div class='mr-2'>

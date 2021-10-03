@@ -7,5 +7,5 @@ if (!isset($_SESSION['Sid']) || $_SESSION['Sid'] == "" || $_SESSION['Sid'] == '0
 }
 
 if ($loginError) {
-	exit('<meta http-equiv="refresh" content="2; URL=login.php">');
+	exit('<meta http-equiv="refresh" content="0; URL=login.php">');
 }
