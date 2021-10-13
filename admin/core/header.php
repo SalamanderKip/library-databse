@@ -1,5 +1,5 @@
 <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/leerjaar2/periode1/Database/webdev-base-webshop/core/db_connect.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/library/core/db_connect.php');
     include('config.php');
 ?>
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
                     <a href="<?php echo ROOTURL ?>/index.php" type="button" class="btn btn-outline-warning mr-2">Home</a>
                 </li>
                 <li class="nav-item mt-2">
-                    <a href="/leerjaar2/periode1/Database/webdev-base-webshop/admin" type="button" class="btn btn-outline-warning mr-2">Admin CRUD</a>
+                    <a href="#" type="button" class="btn btn-outline-warning mr-2">Admin CRUD</a>
                 </li>
                 <li class="nav-item mt-2">
                     <a href="" type="button" class="btn btn-outline-warning mr-2">About</a>

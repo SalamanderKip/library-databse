@@ -3,9 +3,9 @@ session_start();
 
 // Variablen aanmaken voor de databaseconnectie
 $dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "admin";
-$dbname = "library";
+$dbuser = "xvwolkne_library";
+$dbpass = "library123!";
+$dbname = "xvwolkne_library";
 
 // Connectie instellen
 $con = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
@@ -16,8 +16,8 @@ if ($con -> connect_errno) {
     exit();
 }
 
-define("BASEURL","http://localhost:8001/leerjaar2/periode1/Database/webdev-base-webshop/");
-define("BASEURL_CMS","http://localhost:8001/webdev-base-webshop/admin/");
+define("BASEURL","https://salamanderkip.nl/library/");
+define("BASEURL_CMS","https://salamanderkip.nl/library/admin/");
 
 function prettyDump ( $var ) {
     echo "<pre>";

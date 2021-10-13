@@ -23,13 +23,13 @@
                     <a href="index.php" type="button" class="btn btn-outline-warning mr-2">Home</a>
                 </li>
                 <li class="nav-item mt-2">
-                    <a href="/leerjaar2/periode1/Database/webdev-base-webshop/admin" type="button" class="btn btn-outline-warning mr-2">Admin CRUD</a>
+                    <a href="/library/admin" type="button" class="btn btn-outline-warning mr-2">Admin CRUD</a>
                 </li>
                 <li class="nav-item mt-2">
-                    <a href="/leerjaar2/periode1/Database/webdev-base-webshop/register.php" type="button" class="btn btn-outline-warning mr-2">Register</a>
+                    <a href="/library/register.php" type="button" class="btn btn-outline-warning mr-2">Register</a>
                 </li>
                 <li class="nav-item mt-2">
-                    <a href="/leerjaar2/periode1/Database/webdev-base-webshop/logout.php" type="button" class="btn btn-outline-warning mr-2">Logout</a>
+                    <a href="/library/logout.php" type="button" class="btn btn-outline-warning mr-2">Logout</a>
                 </li>
             </ul>
             <?php
